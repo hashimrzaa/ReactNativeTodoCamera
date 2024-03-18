@@ -1,10 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import Camera from './src/components/Camera'
 
 export default function App() {
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+
+      <Camera />
+
       <StatusBar style="auto" />
     </View>
   );
@@ -14,7 +18,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'space-around'
   },
-});
+  text: {
+    color: 'red'
+  },
+  input: {
+    width: 150,
+    height: 70,
+    borderWidth: 4
+  }
+})
