@@ -4,9 +4,8 @@ import {
   StyleSheet,
   ScrollView,
   Text,
-  Button,
   TouchableOpacity,
-  Image, // Import Image from react-native
+  Image,
 } from "react-native";
 import { Camera, CameraType } from "expo-camera";
 
@@ -25,13 +24,11 @@ const ViewStyleProps = () => {
   }
   console.log(Todo);
 
-
-  
   function deleteByID(id) {
-    const index = Todo.findIndex(item => item.id === id);
+    const index = Todo.findIndex((item) => item.id === id);
     if (index !== -1) {
       Todo.splice(index, 1);
-      setTodo([...Todo])
+      setTodo([...Todo]);
     }
   }
 
