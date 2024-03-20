@@ -22,7 +22,6 @@ const ViewStyleProps = () => {
     const photo = await cameraRef.current.takePictureAsync();
     setTodo([...Todo, { id: Todo.length + 1, uri: photo.uri }]);
   }
-  console.log(Todo);
 
   function deleteByID(id) {
     const index = Todo.findIndex((item) => item.id === id);
@@ -40,12 +39,7 @@ const ViewStyleProps = () => {
             <Text style={styles.textflip}>Flip Camera</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={snapPicture}>
-            <Image
-              style={styles.icon}
-              source={{
-                uri: "https://static-00.iconduck.com/assets.00/snap-icon-2048x2048-hs6u6g2k.png",
-              }}
-            />
+            <View style={styles.takepicbtn} />
           </TouchableOpacity>
         </View>
       </Camera>
@@ -112,10 +106,7 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
     alignItems: "center",
   },
-  icon: {
-    width: 100,
-    height: 100,
-  },
+
   textflip: {
     fontSize: 24,
     fontWeight: "bold",
@@ -125,6 +116,12 @@ const styles = StyleSheet.create({
     padding: 10,
     textAlign: "center",
     width: "100%",
+  },
+  takepicbtn: {
+    width: 70,
+    height: 70,
+    borderRadius: 10000,
+    borderWidth: 2,
   },
 });
 
